@@ -1,0 +1,371 @@
+:root {
+    --primary-purple: #6b25cc;
+    --dark-purple: #4B279C;
+    --light-purple: #F3EEFF;
+    --card-bg: #FFFFFF;
+    --text-color: #333333;
+    --text-light: #777777;
+    --shadow-light: rgba(0, 0, 0, 0.05);
+    --shadow-medium: rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-purple);
+    color: var(--text-color);
+}
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* --- Sidebar --- */
+.sidebar {
+    width: 280px;
+    background-color: var(--primary-purple);
+    color: white;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+
+.sidebar-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.icon-placeholder-lg {
+    font-size: 60px;
+}
+
+.sidebar-nav {
+    flex-grow: 1;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.nav-item:hover, .nav-item.active {
+    background-color: var(--dark-purple);
+}
+
+.icon-placeholder {
+    width: 24px;
+    height: 24px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+.logout-btn {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    margin-top: 20px;
+    transition: background-color 0.2s ease;
+}
+
+.logout-btn:hover {
+    background-color: var(--dark-purple);
+}
+
+/* --- Main Content --- */
+.main-content {
+    flex-grow: 1;
+    padding: 40px;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.search-bar input {
+    width: 400px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 4px 15px var(--shadow-light);
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #ccc; /* Placeholder color */
+    box-shadow: 0 4px 10px var(--shadow-light);
+}
+
+.user-name {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.user-year {
+    font-size: 14px;
+    color: var(--text-light);
+}
+
+/* --- Welcome Section --- */
+.welcome-section {
+    background: linear-gradient(135deg, #B990FB, #8140E5);
+    color: white;
+    padding: 40px 50px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(129, 64, 229, 0.2);
+    overflow: hidden;
+    position: relative;
+}
+
+.welcome-section h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin: 0 0 10px;
+}
+
+.welcome-section p {
+    font-size: 16px;
+    margin: 0;
+    opacity: 0.8;
+}
+
+.date {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.welcome-image {
+    width: 300px; /* Placeholder for the 3D image */
+    height: 250px;
+    background: url(https://i.imgur.com/uR1d3nK.png) no-repeat center center / contain;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+/* --- Main Content Grid Layout --- */
+.main-content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+/* --- Card Styling (general) --- */
+.card {
+    background-color: var(--card-bg);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 5px 20px var(--shadow-light);
+}
+
+/* --- Finance Section --- */
+.finance-section h2 {
+    margin-top: 0;
+}
+
+.cards-row {
+    display: flex;
+    gap: 20px;
+}
+
+.finance-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+}
+
+.finance-card h3 {
+    margin: 10px 0 5px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.finance-card p {
+    margin: 0;
+    font-size: 14px;
+    color: var(--text-light);
+}
+
+.card-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    background-color: var(--light-purple);
+}
+/* .finance-icon-1 { background-image: url('https://i.imgur.com/h5vL41C.png'); background-size: 50%; background-position: center; background-repeat: no-repeat; }
+.finance-icon-2 { background-image: url('https://i.imgur.com/71o59eJ.png'); background-size: 50%; background-position: center; background-repeat: no-repeat; }
+.finance-icon-3 { background-image: url('https://i.imgur.com/8Qx2L7P.png'); background-size: 50%; background-position: center; background-repeat: no-repeat; } */
+
+/* --- Right Panel (Instructors & Notice) --- */
+.right-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.instructors-section, .notice-section {
+    position: relative;
+    background-color: var(--card-bg);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 5px 20px var(--shadow-light);
+}
+
+.see-all {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    text-decoration: none;
+    color: var(--primary-purple);
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.instructors-list {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.instructor-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #ccc;
+    box-shadow: 0 4px 10px var(--shadow-light);
+}
+
+.notice-item {
+    padding: 15px 0;
+    border-top: 1px solid #eee;
+}
+
+.notice-item:first-child {
+    border-top: none;
+}
+
+.notice-item h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 5px;
+}
+
+.notice-item p {
+    font-size: 14px;
+    color: var(--text-light);
+    margin: 0;
+}
+
+.see-more {
+    font-size: 14px;
+    color: var(--primary-purple);
+    text-decoration: none;
+}
+
+/* --- Enrolled Courses Section --- */
+.enrolled-courses {
+    position: relative;
+}
+
+.enrolled-courses h2 {
+    margin-bottom: 20px;
+}
+
+.courses-row {
+    display: flex;
+    gap: 20px;
+}
+
+.course-card {
+    flex: 1;
+    color: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    overflow: hidden;
+    height: 150px;
+}
+
+.course-info {
+    z-index: 1;
+}
+
+.course-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 0 10px;
+}
+
+.course-btn {
+    display: inline-block;
+    padding: 8px 25px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.course-btn:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.course-gradient-1 {
+    background: linear-gradient(135deg, #B990FB, #8140E5);
+}
+.course-gradient-2 {
+    background: linear-gradient(135deg, #FFB6C1, #C781E5);
+}
+.course-gradient-2::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 150px;
+    height: 150px;
+    background: url('https://i.imgur.com/71o59eJ.png') no-repeat center center / contain;
+    opacity: 0.8;
+}
