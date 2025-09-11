@@ -2,8 +2,8 @@
 /* Base Styles                                 */
 /* -------------------------------------------------------------------------- */
 :root {
-    --primary-purple: #8140E5;
-    --dark-purple: #4B279C;
+    --primary-purple: #1f0348;
+    --dark-purple: #3a1d7e;
     --light-purple: #F3EEFF;
     --card-bg: #FFFFFF;
     --text-color: #333333;
@@ -156,7 +156,7 @@ body {
 
 /* Welcome Section */
 .welcome-section {
-    background: linear-gradient(135deg, #B990FB, #8140E5);
+    background: linear-gradient(135deg, #6b47a5, #421a7d);
     color: white;
     padding: 40px 50px;
     border-radius: 30px;
@@ -354,10 +354,10 @@ body {
 }
 
 .course-gradient-1 {
-    background: linear-gradient(135deg, #B990FB, #8140E5);
+    background: linear-gradient(135deg, #593693, #390882);
 }
 .course-gradient-2 {
-    background: linear-gradient(135deg, #FFB6C1, #C781E5);
+    background: linear-gradient(135deg, #9e33bf, #651687);
 }
 .course-gradient-2::before {
     content: '';
