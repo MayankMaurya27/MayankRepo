@@ -1,3 +1,6 @@
+/* -------------------------------------------------------------------------- */
+/* Base Styles                                 */
+/* -------------------------------------------------------------------------- */
 :root {
     --primary-purple: #8140E5;
     --dark-purple: #4B279C;
@@ -7,6 +10,10 @@
     --text-light: #777777;
     --shadow-light: rgba(0, 0, 0, 0.05);
     --shadow-medium: rgba(0, 0, 0, 0.1);
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body {
@@ -22,7 +29,9 @@ body {
     min-height: 100vh;
 }
 
-/* --- Sidebar --- */
+/* -------------------------------------------------------------------------- */
+/* Sidebar                                   */
+/* -------------------------------------------------------------------------- */
 .sidebar {
     width: 280px;
     background-color: var(--primary-purple);
@@ -32,6 +41,7 @@ body {
     flex-direction: column;
     border-top-right-radius: 40px;
     border-bottom-right-radius: 40px;
+    transition: width 0.3s ease;
 }
 
 .sidebar-header {
@@ -57,7 +67,7 @@ body {
     text-decoration: none;
     border-radius: 12px;
     font-weight: 500;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease, padding 0.2s ease;
 }
 
 .nav-item:hover, .nav-item.active {
@@ -82,14 +92,16 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 12px;
     margin-top: 20px;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease, padding 0.2s ease;
 }
 
 .logout-btn:hover {
     background-color: var(--dark-purple);
 }
 
-/* --- Main Content --- */
+/* -------------------------------------------------------------------------- */
+/* Main Content                                */
+/* -------------------------------------------------------------------------- */
 .main-content {
     flex-grow: 1;
     padding: 40px;
@@ -102,8 +114,12 @@ body {
     margin-bottom: 30px;
 }
 
+.search-bar {
+    max-width: 400px;
+    width: 100%;
+}
 .search-bar input {
-    width: 400px;
+    width: 100%;
     padding: 12px 20px;
     border: none;
     border-radius: 12px;
@@ -124,7 +140,7 @@ body {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: #ccc; /* Placeholder color */
+    background-color: #ccc;
     box-shadow: 0 4px 10px var(--shadow-light);
 }
 
@@ -138,7 +154,7 @@ body {
     color: var(--text-light);
 }
 
-/* --- Welcome Section --- */
+/* Welcome Section */
 .welcome-section {
     background: linear-gradient(135deg, #B990FB, #8140E5);
     color: white;
@@ -151,6 +167,7 @@ body {
     box-shadow: 0 10px 30px rgba(129, 64, 229, 0.2);
     overflow: hidden;
     position: relative;
+    text-align: left;
 }
 
 .welcome-section h1 {
@@ -159,27 +176,22 @@ body {
     margin: 0 0 10px;
 }
 
-.welcome-section p {
+.welcome-section p, .date {
     font-size: 16px;
     margin: 0;
     opacity: 0.8;
 }
 
-.date {
-    font-size: 14px;
-    opacity: 0.8;
-}
-
 .welcome-image {
-    width: 300px; /* Placeholder for the 3D image */
+    width: 300px;
     height: 250px;
-    background: url(https://i.imgur.com/uR1d3nK.png) no-repeat center center / contain;
+    background: url('https://i.imgur.com/uR1d3nK.png') no-repeat center center / contain;
     position: absolute;
     right: 0;
     bottom: 0;
 }
 
-/* --- Main Content Grid Layout --- */
+/* Grid Layouts */
 .main-content-grid {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -187,22 +199,32 @@ body {
     margin-bottom: 30px;
 }
 
-/* --- Card Styling (general) --- */
+.cards-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.courses-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.right-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Card Styling */
 .card {
     background-color: var(--card-bg);
     border-radius: 20px;
     padding: 25px;
     box-shadow: 0 5px 20px var(--shadow-light);
-}
-
-/* --- Finance Section --- */
-.finance-section h2 {
-    margin-top: 0;
-}
-
-.cards-row {
-    display: flex;
-    gap: 20px;
+    flex: 1;
+    min-width: 150px;
 }
 
 .finance-card {
@@ -210,7 +232,6 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    flex: 1;
 }
 
 .finance-card h3 {
@@ -219,28 +240,19 @@ body {
     font-weight: 600;
 }
 
-.finance-card p {
-    margin: 0;
-    font-size: 14px;
-    color: var(--text-light);
-}
-
 .card-icon {
     width: 60px;
     height: 60px;
     border-radius: 12px;
     background-color: var(--light-purple);
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
 }
-.finance-icon-1 { background-image: url('https://i.imgur.com/h5vL41C.png'); background-size: 50%; background-position: center; background-repeat: no-repeat; }
-.finance-icon-2 { background-image: url('https://i.imgur.com/71o59eJ.png'); background-size: 50%; background-position: center; background-repeat: no-repeat; }
-.finance-icon-3 { background-image: url('https://i.imgur.com/8Qx2L7P.png'); background-size: 50%; background-position: center; background-repeat: no-repeat; }
 
-/* --- Right Panel (Instructors & Notice) --- */
-.right-panel {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
+.finance-icon-1 { background-image: url('https://i.imgur.com/h5vL41C.png'); }
+.finance-icon-2 { background-image: url('https://i.imgur.com/71o59eJ.png'); }
+.finance-icon-3 { background-image: url('https://i.imgur.com/8Qx2L7P.png'); }
 
 .instructors-section, .notice-section {
     position: relative;
@@ -264,6 +276,7 @@ body {
     display: flex;
     gap: 15px;
     margin-top: 15px;
+    flex-wrap: wrap;
 }
 
 .instructor-avatar {
@@ -301,22 +314,7 @@ body {
     text-decoration: none;
 }
 
-/* --- Enrolled Courses Section --- */
-.enrolled-courses {
-    position: relative;
-}
-
-.enrolled-courses h2 {
-    margin-bottom: 20px;
-}
-
-.courses-row {
-    display: flex;
-    gap: 20px;
-}
-
 .course-card {
-    flex: 1;
     color: white;
     border-radius: 20px;
     padding: 30px;
@@ -326,6 +324,8 @@ body {
     position: relative;
     overflow: hidden;
     height: 150px;
+    flex: 1;
+    min-width: 150px;
 }
 
 .course-info {
@@ -368,4 +368,135 @@ body {
     height: 150px;
     background: url('https://i.imgur.com/71o59eJ.png') no-repeat center center / contain;
     opacity: 0.8;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Media Queries                                */
+/* -------------------------------------------------------------------------- */
+
+/* Tablets & Small Laptops (1024px and below) */
+@media (max-width: 1024px) {
+    .dashboard-container {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        height: auto;
+        border-radius: 0;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        padding: 20px;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .sidebar-header {
+        display: none;
+    }
+    .logout-btn {
+        display: flex; /* Make the logout button visible */
+        order: 2; /* Put it after the navigation links */
+    }
+    .sidebar-nav {
+        flex-direction: row;
+        gap: 10px;
+        flex-grow: 1;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    .nav-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 10px;
+        gap: 5px;
+        font-size: 14px;
+        flex-basis: 12%; /* Ensures items wrap nicely on smaller screens */
+    }
+    .main-content {
+        padding: 20px;
+    }
+    .main-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .search-bar {
+        width: 100%;
+        max-width: none;
+    }
+    .user-profile {
+        width: 100%;
+        justify-content: space-between;
+    }
+    .welcome-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px;
+        gap: 20px;
+    }
+    .welcome-image {
+        position: static;
+        width: 200px;
+        height: auto;
+        margin-top: 10px;
+    }
+    .main-content-grid {
+        grid-template-columns: 1fr; /* Stack the main content and right panel */
+        gap: 20px;
+    }
+    .cards-row, .courses-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* Mobile Phones (600px and below) */
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+    .sidebar {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    .nav-item {
+        padding: 8px 5px;
+    }
+    .nav-item span {
+        display: none; /* Hide text to save space on very small screens */
+    }
+    .main-content {
+        padding: 10px;
+    }
+    .welcome-section h1 {
+        font-size: 24px;
+    }
+    .welcome-section p, .date {
+        font-size: 12px;
+    }
+    .card {
+        padding: 15px;
+    }
+    .course-card {
+        height: 120px;
+    }
+    .course-card h3 {
+        font-size: 18px;
+    }
+    .notice-item {
+        padding: 10px 0;
+    }
+    .see-all {
+        font-size: 12px;
+        top: 15px;
+        right: 15px;
+    }
+    .finance-card h3 {
+        font-size: 18px;
+    }
+    .instructor-avatar {
+        width: 40px;
+        height: 40px;
+    }
 }
