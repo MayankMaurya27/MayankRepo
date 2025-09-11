@@ -7,9 +7,28 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="Dashboard.css">
+    <link rel="stylesheet" href="new.css">
+    <style>
+        /* This style block is for the background image and the zoom effect on scroll */
+        .background-zoom-container {
+            position: fixed; /* Fixes the background to the viewport */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Puts it behind all other content */
+            background-image: url('https://images.pexels.com/photos/956999/milky-way-starry-sky-night-sky-star-956999.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: transform 0.2s ease-out; /* Smooth transition for the zoom */
+        }
+    </style>
 </head>
 <body>
+
+<!-- This is the new container for the zooming background image -->
+<div class="background-zoom-container"></div>
 
 <div class="dashboard-container">
 
@@ -22,7 +41,7 @@
             <a href="#" class="nav-item"><div class="icon-placeholder"></div> Payment Info</a>
             <a href="#" class="nav-item"><div class="icon-placeholder"></div> Registration</a>
             <a href="#" class="nav-item"><div class="icon-placeholder"></div> Courses</a>
-            <a href="#" class="nav-item"><div class="icon-placeholder"></div> Drop Semester</a>
+            
             <a href="#" class="nav-item"><div class="icon-placeholder"></div> Result</a>
             <a href="#" class="nav-item"><div class="icon-placeholder"></div> Notice</a>
             <a href="#" class="nav-item"><div class="icon-placeholder"></div> Schedule</a>
@@ -38,8 +57,8 @@
             <div class="user-profile">
                 <div class="user-avatar"></div>
                 <div class="user-info">
-                    <span class="user-name">Mayank Maurya</span>
-                    <span class="user-year">1st year</span>
+                    <span class="user-name" style="color: aliceblue;">Mayank Maurya</span>
+                    <span class="user-year" style="color: antiquewhite;">1st year</span>
                 </div>
             </div>
         </header>
@@ -136,6 +155,21 @@
         </section>
     </main>
 </div>
+<script>
+    // Get the new background container element
+    const backgroundContainer = document.querySelector('.background-zoom-container');
 
+    // Listen for the scroll event on the window
+    window.addEventListener('scroll', () => {
+        // Calculate the scroll position
+        const scrollPosition = window.scrollY;
+        
+        // Determine the zoom factor based on the scroll position
+        const zoomFactor = 1 + scrollPosition * 0.0003;
+        
+        // Apply the CSS transform to zoom the background container only
+        backgroundContainer.style.transform = `scale(${zoomFactor})`;
+    });
+</script>
 </body>
 </html>
